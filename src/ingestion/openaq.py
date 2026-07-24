@@ -8,7 +8,15 @@ from openaq import OpenAQ
 
 from src.config import OPENAQ_API_KEY
 
+import httpx
+from openaq._sync.transport import Transport
+
+
 log = logging.getLogger(__name__)
+
+class LongTimeoutTransport(Transport):
+    def __init__(self, timeout: float = 30.0):
+        self.client = httpx.Client(timeout=timeout)
 
 
 class OpenAQClient:
@@ -17,7 +25,11 @@ class OpenAQClient:
         if not api_key:
             raise ValueError("OpenAQ API key not set (check src/config.py or env var)")
         self.api_key = api_key
-        self._client = OpenAQ(api_key=self.api_key)
+
+        # httpx's default timeout is too short for deep-pagination queries
+        # use a custom transport with a longer timeout for the OpenAQ client
+   
+        self._client = OpenAQ(api_key=self.api_key, _transport=LongTimeoutTransport(timeout=30.0))
 
     def close(self):
         self._client.close()
@@ -46,18 +58,45 @@ class OpenAQClient:
         return sensor_ids
 
     # fetch hourly data for a specific sensor
-    def fetch_sensor_hourly(self, sensor_id: int, date_from: str, date_to: str) -> pd.DataFrame:
+
+    def fetch_sensor_hourly_chunk(
+        self, sensor_id: int, date_from: str, date_to: str,
+        max_retries: int = 4, backoff_base: float = 5.0,
+    ) -> pd.DataFrame:
         rows = []
         page = 1
         while True:
-            res = self._client.measurements.list(
-                sensors_id=sensor_id,
-                data="hours",
-                datetime_from=date_from,
-                datetime_to=date_to,
-                limit=1000,
-                page=page,
-            )
+            res = None
+            for attempt in range(1, max_retries + 1):
+                try:
+                    res = self._client.measurements.list(
+                        sensors_id=sensor_id,
+                        data="hours",
+                        datetime_from=date_from,
+                        datetime_to=date_to,
+                        limit=1000,
+                        page=page,
+                    )
+                    break
+                except Exception as e:
+                    if attempt == max_retries:
+                        log.error(
+                            "sensor %s page %s failed after %d attempts, stopping pagination early "
+                            "(keeping %d rows already fetched): %s",
+                            sensor_id, page, max_retries, len(rows), e,
+                        )
+                        res = None
+                    else:
+                        wait = backoff_base * (2 ** (attempt - 1))
+                        log.warning(
+                            "sensor %s page %s attempt %d/%d failed (%s), retrying in %.0fs",
+                            sensor_id, page, attempt, max_retries, e, wait,
+                        )
+                        time.sleep(wait)
+
+            if res is None:
+                break  # retries exhausted this page - keep what we have, stop paginating this sensor
+
             if not res.results:
                 break
             rows.extend(dataclasses.asdict(r) for r in res.results)
@@ -70,10 +109,36 @@ class OpenAQClient:
             return pd.DataFrame()
         df = pd.json_normalize(rows)
         df["sensor_id"] = sensor_id
-
-        
-
         return df
+    
+    def fetch_sensor_hourly(
+        self, sensor_id: int, date_from: str, date_to: str,
+        chunk_days: int = 45,
+    ) -> pd.DataFrame:
+        """
+        Fetches one sensor's full date range by splitting it into smaller
+        windows first. OpenAQ's API returns an explicit 408 on deep pagination
+        over a wide date range ("try a smaller time frame") - this sidesteps
+        that by keeping each individual query's date span small, regardless
+        of how many total hours are being pulled overall.
+        """
+        start = pd.Timestamp(date_from)
+        end = pd.Timestamp(date_to)
+        step = pd.Timedelta(days=chunk_days)
+ 
+        frames = []
+        cur = start
+        while cur < end:
+            chunk_end = min(cur + step, end)
+            df = self.fetch_sensor_hourly_chunk(
+                sensor_id, cur.strftime("%Y-%m-%d"), chunk_end.strftime("%Y-%m-%d")
+            )
+            if not df.empty:
+                frames.append(df)
+            cur = chunk_end
+ 
+        return pd.concat(frames, ignore_index=True) if frames else pd.DataFrame()
+ 
 
     # fetch hourly data for every sensor matching a parameter near a coordinate
     def fetch_parameter(
@@ -87,10 +152,12 @@ class OpenAQClient:
     ) -> pd.DataFrame:
         """Fetch hourly data for every sensor matching a parameter near a coordinate."""
         sensor_ids = self.get_sensor_ids(lat, lon, radius_m, parameter_id)
-        frames = [
-            self.fetch_sensor_hourly(sid, date_from, date_to)
-            for sid in sensor_ids
-        ]
+        frames = []
+        for sid in sensor_ids:
+            try:
+                frames.append(self.fetch_sensor_hourly(sid, date_from, date_to))
+            except Exception as e:
+                log.error("Giving up on sensor %s entirely after retries: %s", sid, e)
         frames = [f for f in frames if not f.empty]
         return pd.concat(frames, ignore_index=True) if frames else pd.DataFrame()
 

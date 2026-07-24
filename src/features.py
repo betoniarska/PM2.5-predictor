@@ -24,7 +24,7 @@ log = logging.getLogger(__name__)
 
 PROCESSED_DIR = RAW_DIR.parent / "processed"
 
-HORIZON_HOURS = 1  # 1 for now
+HORIZON_HOURS = 24
 
 POLLUTANT_COLS = ["pm25", "pm10", "no2", "o3"]
 LAG_HOURS = [1, 2, 3, 6, 24]
