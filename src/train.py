@@ -17,14 +17,13 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestRegressor
 from xgboost import XGBRegressor
 
-from src.config import RAW_DIR
+from src.config import RAW_DIR, HORIZON_HOURS
 
 log = logging.getLogger(__name__)
 
 PROCESSED_DIR = RAW_DIR.parent / "processed"
 MODELS_DIR = RAW_DIR.parent.parent / "models"
 
-HORIZON_HOURS = 24
 TARGET_COL = f"pm25_target_{HORIZON_HOURS}h"
 NON_FEATURE_COLS = {"datetime_utc", TARGET_COL}
 

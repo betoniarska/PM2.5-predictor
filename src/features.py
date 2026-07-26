@@ -18,13 +18,11 @@ import logging
 import numpy as np
 import pandas as pd
 
-from src.config import RAW_DIR
+from src.config import RAW_DIR, HORIZON_HOURS
 
 log = logging.getLogger(__name__)
 
 PROCESSED_DIR = RAW_DIR.parent / "processed"
-
-HORIZON_HOURS = 24
 
 POLLUTANT_COLS = ["pm25", "pm10", "no2", "o3"]
 LAG_HOURS = [1, 2, 3, 6, 24]

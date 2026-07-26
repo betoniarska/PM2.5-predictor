@@ -115,6 +115,7 @@ class OpenAQClient:
         self, sensor_id: int, date_from: str, date_to: str,
         chunk_days: int = 45,
     ) -> pd.DataFrame:
+        
         """
         Fetches one sensor's full date range by splitting it into smaller
         windows first. OpenAQ's API returns an explicit 408 on deep pagination
@@ -122,6 +123,7 @@ class OpenAQClient:
         that by keeping each individual query's date span small, regardless
         of how many total hours are being pulled overall.
         """
+
         start = pd.Timestamp(date_from)
         end = pd.Timestamp(date_to)
         step = pd.Timedelta(days=chunk_days)
