@@ -74,3 +74,7 @@ isolation much easier than building one large script.
   have historical data of forecasts on the same horizon, FMI most likely does not serve
   historical forecasts. Other way is to start collecting forecasts from once the predictor
   goes live, but that will take months to gather any meaningful forecast data.
+  Update: found Open-meteo at https://www.meteomatics.com/ which servers daily historical
+  forecasts for specified regions. Seems like a convenient solution as of now:
+  for a 24h-ahead target, join _previous_day1 on my existing datetime_utc; for 48h-ahead,
+  join _previous_day2, etc etc just swapping the offset depending on the desired horizon
