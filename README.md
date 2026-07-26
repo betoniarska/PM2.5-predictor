@@ -70,3 +70,7 @@ isolation much easier than building one large script.
   (might change if adding a larger measurement area e.g. whole Helsinki metropolitan)
 - No real weather forecast integration yet: needed for the 24h horizon to
   reach its full potential.
+- Major pitfall: to use forecast data for the t+horizon timestamp the models needs to
+  have historical data of forecasts on the same horizon, FMI most likely does not serve
+  historical forecasts. Other way is to start collecting forecasts from once the predictor
+  goes live, but that will take months to gather any meaningful forecast data.
