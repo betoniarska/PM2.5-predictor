@@ -89,8 +89,8 @@ if __name__ == "__main__":
     log.info("Recent (1yr) train: %d rows (%s to %s)", len(train_recent), train_recent["datetime_utc"].min(), train_recent["datetime_utc"].max())
     log.info("Fixed test set: %d rows (%s to %s)", len(test), test["datetime_utc"].min(), test["datetime_utc"].max())
 
-    results_full = run_search(train, test, run_tag="diag_2yr_train_fixedtest")
-    results_recent = run_search(train_recent, test, run_tag="diag_1yr_train_fixedtest")
+    results_full = run_search(train, test, run_tag="diag_2yr_train_fixedtest_forecast_aligned")
+    results_recent = run_search(train_recent, test, run_tag="diag_1yr_train_fixedtest_forecast_aligned")
 
     print("\n=== Full 2yr training window ===")
     for name, m in results_full.items():

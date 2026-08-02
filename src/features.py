@@ -31,6 +31,8 @@ ROLLING_WINDOWS = [3, 6, 24]
 TEST_FRACTION = 0.15  # held out from the end of the series, not randomly sampled
 
 
+
+
 def drop_metadata_cols(df: pd.DataFrame) -> pd.DataFrame:
     drop_cols = [c for c in df.columns if c.endswith(("_sensor_count", "_avg_percent_complete"))]
     return df.drop(columns=drop_cols)
@@ -38,6 +40,14 @@ def drop_metadata_cols(df: pd.DataFrame) -> pd.DataFrame:
 
 def add_target(df: pd.DataFrame, horizon: int) -> pd.DataFrame:
     df[f"pm25_target_{horizon}h"] = df["pm25"].shift(-horizon)
+    return df
+
+
+def align_forecast_features(df: pd.DataFrame, horizon: int) -> pd.DataFrame:
+    FORECAST_COLS = [c for c in df.columns if c.endswith("_previous_day1")]
+
+    for col in FORECAST_COLS:
+        df[col] = df[col].shift(-horizon)  # pull the forecast issued at t forward to sit at row t
     return df
 
 
@@ -75,6 +85,7 @@ def build_features(horizon: int = HORIZON_HOURS) -> pd.DataFrame:
 
     df = drop_metadata_cols(df)
     df = add_target(df, horizon)
+    df = align_forecast_features(df, horizon)
     df = add_lag_and_rolling_features(df)
     df = add_time_features(df)
 
@@ -115,6 +126,8 @@ def time_based_split(df: pd.DataFrame, test_fraction: float = TEST_FRACTION):
         len(test), test["datetime_utc"].min(), test["datetime_utc"].max(),
     )
     return train, test
+
+
 
 
 if __name__ == "__main__":

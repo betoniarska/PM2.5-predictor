@@ -1,9 +1,5 @@
 """
-Loads the tuned Random Forest and XGBoost models and reports feature
-importances - which inputs the models are actually relying on. Useful to
-check, in particular, whether weather features are contributing anything
-meaningful at the current horizon, or whether the model is mostly living
-off pollutant lags/rolling means.
+Loads the Random Forest and XGBoost models and reports feature importances
 """
 
 import logging
@@ -21,6 +17,8 @@ WEATHER_COLS_HINTS = (
     "Air temperature", "Wind", "Gust", "Relative humidity",
     "Dew-point", "Precipitation", "Snow", "Pressure", "Horizontal visibility",
     "Cloud amount", "Present weather",
+    "temperature_2m", "relative_humidity_2m", "dew_point_2m",
+    "precipitation", "pressure_msl", "cloud_cover", "wind_speed_10m", "wind_direction_10m",
 )
 
 
@@ -42,6 +40,7 @@ def summarize(name: str, df: pd.DataFrame, top_n: int = 15):
 
     weather_share = df[df["is_weather"]]["importance"].sum()
     pollutant_share = df[~df["is_weather"]]["importance"].sum()
+
     print(f"\n{name}: weather features account for {weather_share:.1%} of total importance")
     print(f"{name}: pollutant/time features account for {pollutant_share:.1%} of total importance")
 
@@ -58,4 +57,4 @@ if __name__ == "__main__":
 
         df = load_importances(name)
         summarize(name, df)
-        log_importances(name, df, horizon=horizon, run_tag="")  # set a run_tag to distinguish runs later
+        log_importances(name, df, horizon=horizon, run_tag="first_tune")
