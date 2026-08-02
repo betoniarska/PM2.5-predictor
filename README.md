@@ -3,7 +3,7 @@
 A hobby ML project forecasting PM2.5 concentration in Helsinki using historical
 air quality data (OpenAQ) and weather observations (FMI).
 
-**Status**: 26.7.2026: early/iterating: pipeline works end-to-end, first tuned models, no forecast weather data yet
+**Status**: 2.8.2026: early/iterating: pipeline works end-to-end, diagnosed plateauing results, forecast features implementation begun
 
 ## Pipeline
 
