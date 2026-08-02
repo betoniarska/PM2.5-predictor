@@ -1,7 +1,7 @@
 # Helsinki PM2.5 Predictor
 
 A hobby ML project forecasting PM2.5 concentration in Helsinki using historical
-air quality data (OpenAQ) and weather observations (FMI).
+air quality data (OpenAQ), weather observations (FMI) and historical forecast data (Open-Meteo).
 
 **Status**: 2.8.2026: early/iterating: pipeline works end-to-end, diagnosed plateauing results, forecast features implementation begun
 
@@ -16,6 +16,7 @@ src/
   ingestion/
     openaq.py             OpenAQ API client (PM2.5, PM10, NO2, O3)
     fmi.py                FMI open data client (weather observations)
+    openmeteo.py          OpenMeteo data client (historical forecast data)
   load_raw.py             orchestrates the raw pull for both sources
   resample_fmi.py         10-min weather observations -> hourly
   aggregate_openaq.py     multiple sensors per pollutant -> one hourly value for Helsinki area
@@ -26,6 +27,7 @@ src/
   evaluate.py             compares models against a naive persistence baseline
   importance.py           report top-n feature importances
   logger.py               log the results from evaluate.py and importance.py into results/ from which they can be visualized in results.ipynb
+  diagnose.py             Initially to diagnose the plateauing effect of adding more data, later the current best result (1 yr XGBoost R2: 0.306)
 ```
 
 Each script under `src/` does one job and can be run standalone
@@ -34,7 +36,7 @@ isolation much easier than building one large script.
 
 ## Key design decisions
 
-- **ELT, not ETL.** Raw API responses are saved untouched; all cleaning/
+- **ELT** Raw API responses are saved untouched; all cleaning/
   filtering/feature choices happen downstream and are cheap to redo without
   re-hitting the APIs.
 - **Time-based train/test split** Lag features make rows
@@ -68,18 +70,31 @@ isolation much easier than building one large script.
 - O3 has only one sensor and noticeably worse uptime than the other
   pollutants; still deciding whether to keep it as a feature or drop it.
   (might change if adding a larger measurement area e.g. whole Helsinki metropolitan)
-- No real weather forecast integration yet: needed for the 24h horizon to
-  reach its full potential.
-- Major pitfall: to use forecast data for the t+horizon timestamp the models needs to
-  have historical data of forecasts on the same horizon, FMI most likely does not serve
-  historical forecasts. Other way is to start collecting forecasts from once the predictor
-  goes live, but that will take months to gather any meaningful forecast data.
-  Update: found Open-meteo at https://www.meteomatics.com/ which servers daily historical
-  forecasts for specified regions. Seems like a convenient solution as of now:
-  for a 24h-ahead target, join _previous_day1 on my existing datetime_utc; for 48h-ahead,
-  join _previous_day2, etc etc just swapping the offset depending on the desired horizon
-- More yearly data shown in diagnosis.py to not have meaningful prediction power on pm2.5,
+- Forecast data integration resolved via open-meteo's (https://www.meteomatics.com/)
+  historical forecast data for the Helsinki area. Currently on a 24h horizon.
+- More yearly data shown in diagnosis.py (2 years vs 1 year) to not have meaningful prediction power on pm2.5,
   this is mostl likely due to the fact that historical pm2.5 features (rolling 24h pm2.5,
-  pm2.5, rolling 6h pm2.5 etc (shown in results.ipynb) are completely dominating the
-  feature importance metrics. Will go for Open-meteo approach as a source of historical
-  forecasts and a third set of features.
+  pm2.5, rolling 6h pm2.5 etc (shown in results.ipynb on the importance chart) are completely
+  dominating the feature importance metrics. However, Open-Meteos wind_direction_10m_previous_day_1
+  has made it into the top 15 features in importance, beating out all of FMI's ground thruth weather
+  features and a considerable chunk of OpenAQ's historical pollutants, showing that the forecast features
+  indeed do represent promising value for predicting pm2.5.
+
+## Current best prediction accuracy (diagnosis.py)
+
+  XGBoost via horizon=24h and 1 year of data: R2=0.306
+  
+  This could be classified as moderate predictive power for the pm2.5 levels in the Helsinki area,
+  with the XGBoost explaining around 30% of the variation in the pm2.5 levels.
+
+  The full latest run of diagnose:
+  
+  === Full 2yr training window ===
+  ridge           MAE=2.349 RMSE=3.258 R2=0.170
+  random_forest   MAE=2.248 RMSE=3.129 R2=0.234
+  xgboost         MAE=2.171 RMSE=3.096 R2=0.250
+  
+  === Recent 1yr training window (same test set) ===
+  ridge           MAE=2.461 RMSE=3.385 R2=0.103
+  random_forest   MAE=2.389 RMSE=3.220 R2=0.189
+  xgboost         MAE=2.125 RMSE=2.978 R2=0.306
