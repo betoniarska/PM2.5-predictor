@@ -96,5 +96,5 @@ if __name__ == "__main__":
         test_start=test_df["datetime_utc"].min(),
         test_end=test_df["datetime_utc"].max(),
         results=results,
-        run_tag="",  # fill in e.g. "1yr_untuned", "1yr_tuned" when calling manually
+        run_tag="2yr_tuned",  # fill in e.g. "1yr_untuned", "1yr_tuned" when calling manually
     )

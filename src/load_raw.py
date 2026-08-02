@@ -6,8 +6,11 @@ from src.config import CITY_LAT, CITY_LON, RADIUS_M, PARAMETERS, RAW_DIR, FMI_FM
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
-DATE_FROM = "2025-07-01"
+# 2 years now as of 26.7.26
+DATE_FROM = "2024-07-01"
 DATE_TO = "2026-07-15"
+
+
 
 if __name__ == "__main__":
     with OpenAQClient() as c:
