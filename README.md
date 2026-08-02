@@ -78,3 +78,8 @@ isolation much easier than building one large script.
   forecasts for specified regions. Seems like a convenient solution as of now:
   for a 24h-ahead target, join _previous_day1 on my existing datetime_utc; for 48h-ahead,
   join _previous_day2, etc etc just swapping the offset depending on the desired horizon
+- More yearly data shown in diagnosis.py to not have meaningful prediction power on pm2.5,
+  this is mostl likely due to the fact that historical pm2.5 features (rolling 24h pm2.5,
+  pm2.5, rolling 6h pm2.5 etc (shown in results.ipynb) are completely dominating the
+  feature importance metrics. Will go for Open-meteo approach as a source of historical
+  forecasts and a third set of features.
