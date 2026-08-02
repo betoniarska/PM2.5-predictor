@@ -79,6 +79,7 @@ isolation much easier than building one large script.
   has made it into the top 15 features in importance, beating out all of FMI's ground thruth weather
   features and a considerable chunk of OpenAQ's historical pollutants, showing that the forecast features
   indeed do represent promising value for predicting pm2.5.
+- Non-stationarity likely cause for the 2 years of data achieving worse results
 
 ## Current best prediction accuracy (diagnosis.py)
 
