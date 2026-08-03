@@ -517,63 +517,439 @@ timestamp,run_tag,horizon_hours,model,feature,importance,is_weather
 2026-08-02T15:32:02,first_tune,24,random_forest,Precipitation intensity,0.0004460489981047,True
 2026-08-02T15:32:02,first_tune,24,random_forest,Precipitation amount,0.0002750162085144,True
 2026-08-02T15:32:02,first_tune,24,xgboost,pm25_roll24h_mean,0.150277778506279,False
-2026-08-02T15:32:02,first_tune,24,xgboost,pm25_roll6h_mean,0.08756880462169647,False
-2026-08-02T15:32:02,first_tune,24,xgboost,pm25,0.06619495153427124,False
-2026-08-02T15:32:02,first_tune,24,xgboost,Snow depth,0.05484580248594284,True
-2026-08-02T15:32:02,first_tune,24,xgboost,wind_direction_10m_previous_day1,0.030466260388493538,True
-2026-08-02T15:32:02,first_tune,24,xgboost,pm25_lag1h,0.026882026344537735,False
-2026-08-02T15:32:02,first_tune,24,xgboost,no2,0.024974334985017776,False
-2026-08-02T15:32:02,first_tune,24,xgboost,o3_roll24h_mean,0.02298763021826744,False
+2026-08-02T15:32:02,first_tune,24,xgboost,pm25_roll6h_mean,0.0875688046216964,False
+2026-08-02T15:32:02,first_tune,24,xgboost,pm25,0.0661949515342712,False
+2026-08-02T15:32:02,first_tune,24,xgboost,Snow depth,0.0548458024859428,True
+2026-08-02T15:32:02,first_tune,24,xgboost,wind_direction_10m_previous_day1,0.0304662603884935,True
+2026-08-02T15:32:02,first_tune,24,xgboost,pm25_lag1h,0.0268820263445377,False
+2026-08-02T15:32:02,first_tune,24,xgboost,no2,0.0249743349850177,False
+2026-08-02T15:32:02,first_tune,24,xgboost,o3_roll24h_mean,0.0229876302182674,False
 2026-08-02T15:32:02,first_tune,24,xgboost,o3_roll3h_mean,0.0215015672147274,False
 2026-08-02T15:32:02,first_tune,24,xgboost,Pressure (msl),0.0205819234251976,True
-2026-08-02T15:32:02,first_tune,24,xgboost,temperature_2m_previous_day1,0.019136875867843628,True
-2026-08-02T15:32:02,first_tune,24,xgboost,pm25_lag24h,0.018525389954447746,False
-2026-08-02T15:32:02,first_tune,24,xgboost,pm10_roll24h_mean,0.016833433881402016,False
-2026-08-02T15:32:02,first_tune,24,xgboost,no2_lag24h,0.016696572303771973,False
-2026-08-02T15:32:02,first_tune,24,xgboost,pm25_roll3h_mean,0.016590893268585205,False
-2026-08-02T15:32:02,first_tune,24,xgboost,Dew-point temperature,0.016107862815260887,True
-2026-08-02T15:32:02,first_tune,24,xgboost,Gust speed,0.016063978895545006,True
-2026-08-02T15:32:02,first_tune,24,xgboost,relative_humidity_2m_previous_day1,0.015990572050213814,True
-2026-08-02T15:32:02,first_tune,24,xgboost,o3,0.015923956409096718,False
-2026-08-02T15:32:02,first_tune,24,xgboost,pm10,0.015671009197831154,False
-2026-08-02T15:32:02,first_tune,24,xgboost,Air temperature,0.015361549332737923,True
-2026-08-02T15:32:02,first_tune,24,xgboost,pressure_msl_previous_day1,0.015067527070641518,True
-2026-08-02T15:32:02,first_tune,24,xgboost,Present weather (auto),0.014214390888810158,True
-2026-08-02T15:32:02,first_tune,24,xgboost,Wind direction,0.014118950814008713,True
-2026-08-02T15:32:02,first_tune,24,xgboost,wind_speed_10m_previous_day1,0.013820409774780273,True
-2026-08-02T15:32:02,first_tune,24,xgboost,o3_lag1h,0.01349002867937088,False
-2026-08-02T15:32:02,first_tune,24,xgboost,o3_lag24h,0.013193798251450062,False
-2026-08-02T15:32:02,first_tune,24,xgboost,precipitation_previous_day1,0.012514193542301655,True
-2026-08-02T15:32:02,first_tune,24,xgboost,no2_lag1h,0.011799553409218788,False
-2026-08-02T15:32:02,first_tune,24,xgboost,dow_cos,0.01060218270868063,False
-2026-08-02T15:32:02,first_tune,24,xgboost,o3_lag3h,0.010275107808411121,False
-2026-08-02T15:32:02,first_tune,24,xgboost,o3_lag6h,0.01015219371765852,False
-2026-08-02T15:32:02,first_tune,24,xgboost,pm10_lag1h,0.010092961601912975,False
-2026-08-02T15:32:02,first_tune,24,xgboost,Relative humidity,0.010006231255829334,True
-2026-08-02T15:32:02,first_tune,24,xgboost,dew_point_2m_previous_day1,0.00984660442918539,True
-2026-08-02T15:32:02,first_tune,24,xgboost,pm10_roll6h_mean,0.009436964057385921,False
-2026-08-02T15:32:02,first_tune,24,xgboost,Cloud amount,0.00934489443898201,True
-2026-08-02T15:32:02,first_tune,24,xgboost,o3_roll6h_mean,0.009082956239581108,False
-2026-08-02T15:32:02,first_tune,24,xgboost,pm10_roll3h_mean,0.008405111730098724,False
-2026-08-02T15:32:02,first_tune,24,xgboost,no2_roll6h_mean,0.008167165331542492,False
-2026-08-02T15:32:02,first_tune,24,xgboost,cloud_cover_previous_day1,0.007591793313622475,True
-2026-08-02T15:32:02,first_tune,24,xgboost,Horizontal visibility,0.007561132311820984,True
-2026-08-02T15:32:02,first_tune,24,xgboost,no2_roll24h_mean,0.007430402096360922,False
-2026-08-02T15:32:02,first_tune,24,xgboost,o3_lag2h,0.006603554356843233,False
-2026-08-02T15:32:02,first_tune,24,xgboost,dow_sin,0.006470951717346907,False
-2026-08-02T15:32:02,first_tune,24,xgboost,pm25_lag2h,0.006451188120990992,False
-2026-08-02T15:32:02,first_tune,24,xgboost,pm10_lag6h,0.006409304682165384,False
-2026-08-02T15:32:02,first_tune,24,xgboost,pm10_lag24h,0.006011805031448603,False
-2026-08-02T15:32:02,first_tune,24,xgboost,Wind speed,0.005797476042062044,True
-2026-08-02T15:32:02,first_tune,24,xgboost,no2_roll3h_mean,0.005489732138812542,False
-2026-08-02T15:32:02,first_tune,24,xgboost,pm25_lag6h,0.004837647080421448,False
-2026-08-02T15:32:02,first_tune,24,xgboost,pm10_lag2h,0.004773706663399935,False
-2026-08-02T15:32:02,first_tune,24,xgboost,no2_lag3h,0.004397550597786903,False
-2026-08-02T15:32:02,first_tune,24,xgboost,hour_cos,0.0036998766008764505,False
-2026-08-02T15:32:02,first_tune,24,xgboost,Precipitation amount,0.002915669232606888,True
-2026-08-02T15:32:02,first_tune,24,xgboost,pm10_lag3h,0.0024739124346524477,False
-2026-08-02T15:32:02,first_tune,24,xgboost,no2_lag2h,0.002298556501045823,False
-2026-08-02T15:32:02,first_tune,24,xgboost,no2_lag6h,0.0022040875628590584,False
-2026-08-02T15:32:02,first_tune,24,xgboost,pm25_lag3h,0.0020679766312241554,False
-2026-08-02T15:32:02,first_tune,24,xgboost,hour_sin,0.0015872864751145244,False
-2026-08-02T15:32:02,first_tune,24,xgboost,Precipitation intensity,0.00011199258733540773,True
+2026-08-02T15:32:02,first_tune,24,xgboost,temperature_2m_previous_day1,0.0191368758678436,True
+2026-08-02T15:32:02,first_tune,24,xgboost,pm25_lag24h,0.0185253899544477,False
+2026-08-02T15:32:02,first_tune,24,xgboost,pm10_roll24h_mean,0.016833433881402,False
+2026-08-02T15:32:02,first_tune,24,xgboost,no2_lag24h,0.0166965723037719,False
+2026-08-02T15:32:02,first_tune,24,xgboost,pm25_roll3h_mean,0.0165908932685852,False
+2026-08-02T15:32:02,first_tune,24,xgboost,Dew-point temperature,0.0161078628152608,True
+2026-08-02T15:32:02,first_tune,24,xgboost,Gust speed,0.016063978895545,True
+2026-08-02T15:32:02,first_tune,24,xgboost,relative_humidity_2m_previous_day1,0.0159905720502138,True
+2026-08-02T15:32:02,first_tune,24,xgboost,o3,0.0159239564090967,False
+2026-08-02T15:32:02,first_tune,24,xgboost,pm10,0.0156710091978311,False
+2026-08-02T15:32:02,first_tune,24,xgboost,Air temperature,0.0153615493327379,True
+2026-08-02T15:32:02,first_tune,24,xgboost,pressure_msl_previous_day1,0.0150675270706415,True
+2026-08-02T15:32:02,first_tune,24,xgboost,Present weather (auto),0.0142143908888101,True
+2026-08-02T15:32:02,first_tune,24,xgboost,Wind direction,0.0141189508140087,True
+2026-08-02T15:32:02,first_tune,24,xgboost,wind_speed_10m_previous_day1,0.0138204097747802,True
+2026-08-02T15:32:02,first_tune,24,xgboost,o3_lag1h,0.0134900286793708,False
+2026-08-02T15:32:02,first_tune,24,xgboost,o3_lag24h,0.01319379825145,False
+2026-08-02T15:32:02,first_tune,24,xgboost,precipitation_previous_day1,0.0125141935423016,True
+2026-08-02T15:32:02,first_tune,24,xgboost,no2_lag1h,0.0117995534092187,False
+2026-08-02T15:32:02,first_tune,24,xgboost,dow_cos,0.0106021827086806,False
+2026-08-02T15:32:02,first_tune,24,xgboost,o3_lag3h,0.0102751078084111,False
+2026-08-02T15:32:02,first_tune,24,xgboost,o3_lag6h,0.0101521937176585,False
+2026-08-02T15:32:02,first_tune,24,xgboost,pm10_lag1h,0.0100929616019129,False
+2026-08-02T15:32:02,first_tune,24,xgboost,Relative humidity,0.0100062312558293,True
+2026-08-02T15:32:02,first_tune,24,xgboost,dew_point_2m_previous_day1,0.0098466044291853,True
+2026-08-02T15:32:02,first_tune,24,xgboost,pm10_roll6h_mean,0.0094369640573859,False
+2026-08-02T15:32:02,first_tune,24,xgboost,Cloud amount,0.009344894438982,True
+2026-08-02T15:32:02,first_tune,24,xgboost,o3_roll6h_mean,0.0090829562395811,False
+2026-08-02T15:32:02,first_tune,24,xgboost,pm10_roll3h_mean,0.0084051117300987,False
+2026-08-02T15:32:02,first_tune,24,xgboost,no2_roll6h_mean,0.0081671653315424,False
+2026-08-02T15:32:02,first_tune,24,xgboost,cloud_cover_previous_day1,0.0075917933136224,True
+2026-08-02T15:32:02,first_tune,24,xgboost,Horizontal visibility,0.0075611323118209,True
+2026-08-02T15:32:02,first_tune,24,xgboost,no2_roll24h_mean,0.0074304020963609,False
+2026-08-02T15:32:02,first_tune,24,xgboost,o3_lag2h,0.0066035543568432,False
+2026-08-02T15:32:02,first_tune,24,xgboost,dow_sin,0.0064709517173469,False
+2026-08-02T15:32:02,first_tune,24,xgboost,pm25_lag2h,0.0064511881209909,False
+2026-08-02T15:32:02,first_tune,24,xgboost,pm10_lag6h,0.0064093046821653,False
+2026-08-02T15:32:02,first_tune,24,xgboost,pm10_lag24h,0.0060118050314486,False
+2026-08-02T15:32:02,first_tune,24,xgboost,Wind speed,0.005797476042062,True
+2026-08-02T15:32:02,first_tune,24,xgboost,no2_roll3h_mean,0.0054897321388125,False
+2026-08-02T15:32:02,first_tune,24,xgboost,pm25_lag6h,0.0048376470804214,False
+2026-08-02T15:32:02,first_tune,24,xgboost,pm10_lag2h,0.0047737066633999,False
+2026-08-02T15:32:02,first_tune,24,xgboost,no2_lag3h,0.0043975505977869,False
+2026-08-02T15:32:02,first_tune,24,xgboost,hour_cos,0.0036998766008764,False
+2026-08-02T15:32:02,first_tune,24,xgboost,Precipitation amount,0.0029156692326068,True
+2026-08-02T15:32:02,first_tune,24,xgboost,pm10_lag3h,0.0024739124346524,False
+2026-08-02T15:32:02,first_tune,24,xgboost,no2_lag2h,0.0022985565010458,False
+2026-08-02T15:32:02,first_tune,24,xgboost,no2_lag6h,0.002204087562859,False
+2026-08-02T15:32:02,first_tune,24,xgboost,pm25_lag3h,0.0020679766312241,False
+2026-08-02T15:32:02,first_tune,24,xgboost,hour_sin,0.0015872864751145,False
+2026-08-02T15:32:02,first_tune,24,xgboost,Precipitation intensity,0.0001119925873354,True
+2026-08-03T13:06:50,first_tune,24,random_forest,pm25_roll24h_mean,0.0958359247064393,False
+2026-08-03T13:06:50,first_tune,24,random_forest,pm25,0.0630140766923854,False
+2026-08-03T13:06:50,first_tune,24,random_forest,pm25_roll6h_mean,0.0595851402940996,False
+2026-08-03T13:06:50,first_tune,24,random_forest,pm25_roll3h_mean,0.0500011874109831,False
+2026-08-03T13:06:50,first_tune,24,random_forest,pm25_lag3h,0.0478877652321261,False
+2026-08-03T13:06:50,first_tune,24,random_forest,pm25_lag1h,0.0420850546271711,False
+2026-08-03T13:06:50,first_tune,24,random_forest,pm25_lag6h,0.0420605917586647,False
+2026-08-03T13:06:50,first_tune,24,random_forest,pm25_lag2h,0.0410580115651537,False
+2026-08-03T13:06:50,first_tune,24,random_forest,Snow depth,0.0359982688140771,True
+2026-08-03T13:06:50,first_tune,24,random_forest,pm25_lag24h,0.0336014344165957,False
+2026-08-03T13:06:50,first_tune,24,random_forest,pm10_roll24h_mean,0.0321495170776373,False
+2026-08-03T13:06:50,first_tune,24,random_forest,wind_direction_10m_previous_day1,0.0278415670170328,True
+2026-08-03T13:06:50,first_tune,24,random_forest,pm10,0.0229199311309126,False
+2026-08-03T13:06:50,first_tune,24,random_forest,Pressure (msl),0.0224840978500603,True
+2026-08-03T13:06:50,first_tune,24,random_forest,Dew-point temperature,0.0223217539066,True
+2026-08-03T13:06:50,first_tune,24,random_forest,relative_humidity_2m_previous_day1,0.0191815515741855,True
+2026-08-03T13:06:50,first_tune,24,random_forest,pm10_lag1h,0.0175083446921074,False
+2026-08-03T13:06:50,first_tune,24,random_forest,pm10_roll3h_mean,0.0173351444460846,False
+2026-08-03T13:06:50,first_tune,24,random_forest,pm10_roll6h_mean,0.0165545689930133,False
+2026-08-03T13:06:50,first_tune,24,random_forest,pm10_lag2h,0.0151860139298273,False
+2026-08-03T13:06:50,first_tune,24,random_forest,Wind direction,0.0145132752520348,True
+2026-08-03T13:06:50,first_tune,24,random_forest,temperature_2m_previous_day1,0.0144751304647606,True
+2026-08-03T13:06:50,first_tune,24,random_forest,pressure_msl_previous_day1,0.0138441192978022,True
+2026-08-03T13:06:50,first_tune,24,random_forest,o3_roll24h_mean,0.0113682901694368,False
+2026-08-03T13:06:50,first_tune,24,random_forest,Air temperature,0.0109580163244391,True
+2026-08-03T13:06:50,first_tune,24,random_forest,Relative humidity,0.0109433360814201,True
+2026-08-03T13:06:50,first_tune,24,random_forest,Horizontal visibility,0.0109101814255414,True
+2026-08-03T13:06:50,first_tune,24,random_forest,pm10_lag3h,0.0107531344945469,False
+2026-08-03T13:06:50,first_tune,24,random_forest,pm10_lag24h,0.0105546401440101,False
+2026-08-03T13:06:50,first_tune,24,random_forest,dow_cos,0.0099219786465252,False
+2026-08-03T13:06:50,first_tune,24,random_forest,wind_speed_10m_previous_day1,0.0097785541517786,True
+2026-08-03T13:06:50,first_tune,24,random_forest,no2_roll24h_mean,0.0096360054650275,False
+2026-08-03T13:06:50,first_tune,24,random_forest,dew_point_2m_previous_day1,0.0090259052050562,True
+2026-08-03T13:06:50,first_tune,24,random_forest,boundary_layer_height,0.0084945671811188,False
+2026-08-03T13:06:50,first_tune,24,random_forest,pm10_lag6h,0.0082495993391046,False
+2026-08-03T13:06:50,first_tune,24,random_forest,o3_roll6h_mean,0.0080310241738704,False
+2026-08-03T13:06:50,first_tune,24,random_forest,o3_lag24h,0.0073079537640441,False
+2026-08-03T13:06:50,first_tune,24,random_forest,cloud_cover_previous_day1,0.006903957248222,True
+2026-08-03T13:06:50,first_tune,24,random_forest,o3_roll3h_mean,0.0063919280484218,False
+2026-08-03T13:06:50,first_tune,24,random_forest,o3_lag1h,0.0062183968443232,False
+2026-08-03T13:06:50,first_tune,24,random_forest,o3,0.0061590190101386,False
+2026-08-03T13:06:50,first_tune,24,random_forest,no2_roll6h_mean,0.0061217928874201,False
+2026-08-03T13:06:50,first_tune,24,random_forest,o3_lag2h,0.0059655894402081,False
+2026-08-03T13:06:50,first_tune,24,random_forest,Gust speed,0.0055518850127118,True
+2026-08-03T13:06:50,first_tune,24,random_forest,o3_lag3h,0.0052402179293422,False
+2026-08-03T13:06:50,first_tune,24,random_forest,Present weather (auto),0.0047644851478536,True
+2026-08-03T13:06:50,first_tune,24,random_forest,Wind speed,0.0046707956020928,True
+2026-08-03T13:06:50,first_tune,24,random_forest,Cloud amount,0.0042880211522205,True
+2026-08-03T13:06:50,first_tune,24,random_forest,o3_lag6h,0.0042844685157319,False
+2026-08-03T13:06:50,first_tune,24,random_forest,no2_roll3h_mean,0.0042282787318245,False
+2026-08-03T13:06:50,first_tune,24,random_forest,no2_lag2h,0.0040611881439527,False
+2026-08-03T13:06:50,first_tune,24,random_forest,no2_lag24h,0.0039451401298465,False
+2026-08-03T13:06:50,first_tune,24,random_forest,no2_lag1h,0.0037812756770605,False
+2026-08-03T13:06:50,first_tune,24,random_forest,dow_sin,0.0031668116146839,False
+2026-08-03T13:06:50,first_tune,24,random_forest,no2_lag3h,0.0027537173638741,False
+2026-08-03T13:06:50,first_tune,24,random_forest,no2,0.0027073285745362,False
+2026-08-03T13:06:50,first_tune,24,random_forest,no2_lag6h,0.0024170560413212,False
+2026-08-03T13:06:50,first_tune,24,random_forest,hour_cos,0.0010838141585181,False
+2026-08-03T13:06:50,first_tune,24,random_forest,precipitation_previous_day1,0.0007916031679424,True
+2026-08-03T13:06:50,first_tune,24,random_forest,hour_sin,0.000681532675623,False
+2026-08-03T13:06:50,first_tune,24,random_forest,Precipitation intensity,0.0002460300875699,True
+2026-08-03T13:06:50,first_tune,24,random_forest,Precipitation amount,0.0002000090788828,True
+2026-08-03T13:06:50,first_tune,24,xgboost,pm25_roll24h_mean,0.1188184842467308,False
+2026-08-03T13:06:50,first_tune,24,xgboost,pm25_roll6h_mean,0.1001031547784805,False
+2026-08-03T13:06:50,first_tune,24,xgboost,pm25,0.0557173006236553,False
+2026-08-03T13:06:50,first_tune,24,xgboost,pm25_lag1h,0.0487909130752086,False
+2026-08-03T13:06:50,first_tune,24,xgboost,dow_cos,0.0473570600152015,False
+2026-08-03T13:06:50,first_tune,24,xgboost,Snow depth,0.0453158356249332,True
+2026-08-03T13:06:50,first_tune,24,xgboost,pm25_roll3h_mean,0.0287485774606466,False
+2026-08-03T13:06:50,first_tune,24,xgboost,wind_direction_10m_previous_day1,0.0230108741670846,True
+2026-08-03T13:06:50,first_tune,24,xgboost,pm10_roll24h_mean,0.0200789142400026,False
+2026-08-03T13:06:50,first_tune,24,xgboost,temperature_2m_previous_day1,0.0200392100960016,True
+2026-08-03T13:06:50,first_tune,24,xgboost,pm25_lag2h,0.0199609883129596,False
+2026-08-03T13:06:50,first_tune,24,xgboost,o3_roll24h_mean,0.0183136370033025,False
+2026-08-03T13:06:50,first_tune,24,xgboost,Pressure (msl),0.0176900960505008,True
+2026-08-03T13:06:50,first_tune,24,xgboost,o3_lag1h,0.0171275585889816,False
+2026-08-03T13:06:50,first_tune,24,xgboost,pm25_lag24h,0.0159353148192167,False
+2026-08-03T13:06:50,first_tune,24,xgboost,relative_humidity_2m_previous_day1,0.0156199149787426,True
+2026-08-03T13:06:50,first_tune,24,xgboost,no2_lag6h,0.0154830049723386,False
+2026-08-03T13:06:50,first_tune,24,xgboost,o3_lag6h,0.0154422596096992,False
+2026-08-03T13:06:50,first_tune,24,xgboost,Air temperature,0.0154201658442616,True
+2026-08-03T13:06:50,first_tune,24,xgboost,Dew-point temperature,0.0154194729402661,True
+2026-08-03T13:06:50,first_tune,24,xgboost,no2_lag1h,0.0153008569031953,False
+2026-08-03T13:06:50,first_tune,24,xgboost,o3,0.0151330148801207,False
+2026-08-03T13:06:50,first_tune,24,xgboost,no2_roll3h_mean,0.014662355184555,False
+2026-08-03T13:06:50,first_tune,24,xgboost,boundary_layer_height,0.0139599442481994,False
+2026-08-03T13:06:50,first_tune,24,xgboost,no2,0.013675176538527,False
+2026-08-03T13:06:50,first_tune,24,xgboost,pressure_msl_previous_day1,0.0130268353968858,True
+2026-08-03T13:06:50,first_tune,24,xgboost,Wind speed,0.0127315539866685,True
+2026-08-03T13:06:50,first_tune,24,xgboost,o3_lag3h,0.012506472878158,False
+2026-08-03T13:06:50,first_tune,24,xgboost,wind_speed_10m_previous_day1,0.0123628145083785,True
+2026-08-03T13:06:50,first_tune,24,xgboost,o3_roll6h_mean,0.0121683552861213,False
+2026-08-03T13:06:50,first_tune,24,xgboost,o3_lag24h,0.0117187406867742,False
+2026-08-03T13:06:50,first_tune,24,xgboost,no2_lag3h,0.0110626183450222,False
+2026-08-03T13:06:50,first_tune,24,xgboost,o3_roll3h_mean,0.0109870508313179,False
+2026-08-03T13:06:50,first_tune,24,xgboost,no2_lag2h,0.010577798821032,False
+2026-08-03T13:06:50,first_tune,24,xgboost,precipitation_previous_day1,0.0102792615070939,True
+2026-08-03T13:06:50,first_tune,24,xgboost,pm10,0.0101071307435631,False
+2026-08-03T13:06:50,first_tune,24,xgboost,no2_roll6h_mean,0.0099807446822524,False
+2026-08-03T13:06:50,first_tune,24,xgboost,Cloud amount,0.0095130559056997,True
+2026-08-03T13:06:50,first_tune,24,xgboost,pm25_lag6h,0.0092919059097766,False
+2026-08-03T13:06:50,first_tune,24,xgboost,dew_point_2m_previous_day1,0.008926841430366,True
+2026-08-03T13:06:50,first_tune,24,xgboost,Horizontal visibility,0.0083879195153713,True
+2026-08-03T13:06:50,first_tune,24,xgboost,no2_lag24h,0.007968827150762,False
+2026-08-03T13:06:50,first_tune,24,xgboost,Wind direction,0.0074342563748359,True
+2026-08-03T13:06:50,first_tune,24,xgboost,o3_lag2h,0.0072550200857222,False
+2026-08-03T13:06:50,first_tune,24,xgboost,Relative humidity,0.0061362530104815,True
+2026-08-03T13:06:50,first_tune,24,xgboost,dow_sin,0.0061321151442825,False
+2026-08-03T13:06:50,first_tune,24,xgboost,pm10_roll6h_mean,0.0058509563095867,False
+2026-08-03T13:06:50,first_tune,24,xgboost,no2_roll24h_mean,0.0054460559040308,False
+2026-08-03T13:06:50,first_tune,24,xgboost,cloud_cover_previous_day1,0.0053211492486298,True
+2026-08-03T13:06:50,first_tune,24,xgboost,pm10_lag6h,0.0044965986162424,False
+2026-08-03T13:06:50,first_tune,24,xgboost,pm10_roll3h_mean,0.0043364688754081,False
+2026-08-03T13:06:50,first_tune,24,xgboost,pm10_lag24h,0.0038164581637829,False
+2026-08-03T13:06:50,first_tune,24,xgboost,pm10_lag2h,0.0035076034255325,False
+2026-08-03T13:06:50,first_tune,24,xgboost,pm10_lag1h,0.0032567507587373,False
+2026-08-03T13:06:50,first_tune,24,xgboost,pm10_lag3h,0.0032050674781203,False
+2026-08-03T13:06:50,first_tune,24,xgboost,Gust speed,0.002024911576882,True
+2026-08-03T13:06:50,first_tune,24,xgboost,hour_cos,0.0018926574848592,False
+2026-08-03T13:06:50,first_tune,24,xgboost,hour_sin,0.0011657928116619,False
+2026-08-03T13:06:50,first_tune,24,xgboost,Precipitation amount,0.0,True
+2026-08-03T13:06:50,first_tune,24,xgboost,pm25_lag3h,0.0,False
+2026-08-03T13:06:50,first_tune,24,xgboost,Present weather (auto),0.0,True
+2026-08-03T13:06:50,first_tune,24,xgboost,Precipitation intensity,0.0,True
+2026-08-03T13:23:27,first_tune,24,random_forest,pm25_roll24h_mean,0.0640480194367401,False
+2026-08-03T13:23:27,first_tune,24,random_forest,pm25,0.0395990070901704,False
+2026-08-03T13:23:27,first_tune,24,random_forest,pm25_lag2h,0.0353678926563851,False
+2026-08-03T13:23:27,first_tune,24,random_forest,pm25_roll6h_mean,0.0352108389506787,False
+2026-08-03T13:23:27,first_tune,24,random_forest,pm25_lag1h,0.0350486068167522,False
+2026-08-03T13:23:27,first_tune,24,random_forest,wind_direction_10m_previous_day1,0.0338445976408898,True
+2026-08-03T13:23:27,first_tune,24,random_forest,pm25_roll3h_mean,0.0316820462433691,False
+2026-08-03T13:23:27,first_tune,24,random_forest,pm25_lag3h,0.0294446486854938,False
+2026-08-03T13:23:27,first_tune,24,random_forest,Pressure (msl),0.0286346497631051,True
+2026-08-03T13:23:27,first_tune,24,random_forest,pm25_lag24h,0.0278517035112372,False
+2026-08-03T13:23:27,first_tune,24,random_forest,pm10_roll24h_mean,0.0275085871340755,False
+2026-08-03T13:23:27,first_tune,24,random_forest,Snow depth,0.0268313388961064,True
+2026-08-03T13:23:27,first_tune,24,random_forest,pm25_lag6h,0.0260023545130273,False
+2026-08-03T13:23:27,first_tune,24,random_forest,Dew-point temperature,0.0232141260859528,True
+2026-08-03T13:23:27,first_tune,24,random_forest,pressure_msl_previous_day1,0.022600558756981,True
+2026-08-03T13:23:27,first_tune,24,random_forest,relative_humidity_2m_previous_day1,0.0220921290674829,True
+2026-08-03T13:23:27,first_tune,24,random_forest,temperature_2m_previous_day1,0.0192339337393975,True
+2026-08-03T13:23:27,first_tune,24,random_forest,Air temperature,0.0179704167303888,True
+2026-08-03T13:23:27,first_tune,24,random_forest,dew_point_2m_previous_day1,0.0178051183898107,True
+2026-08-03T13:23:27,first_tune,24,random_forest,wind_speed_10m_previous_day1,0.0177820967028594,True
+2026-08-03T13:23:27,first_tune,24,random_forest,pm10,0.0176857870692416,False
+2026-08-03T13:23:27,first_tune,24,random_forest,Wind direction,0.0176642412991541,True
+2026-08-03T13:23:27,first_tune,24,random_forest,o3_roll24h_mean,0.0158211092800592,False
+2026-08-03T13:23:27,first_tune,24,random_forest,no2_roll24h_mean,0.0151308785259067,False
+2026-08-03T13:23:27,first_tune,24,random_forest,pm10_lag2h,0.0148467541563085,False
+2026-08-03T13:23:27,first_tune,24,random_forest,pm10_roll6h_mean,0.014092744554769,False
+2026-08-03T13:23:27,first_tune,24,random_forest,boundary_layer_height,0.0139858964811769,False
+2026-08-03T13:23:27,first_tune,24,random_forest,pm10_lag1h,0.0134283724534276,False
+2026-08-03T13:23:27,first_tune,24,random_forest,Relative humidity,0.0129408999481923,True
+2026-08-03T13:23:27,first_tune,24,random_forest,Horizontal visibility,0.0129018125545815,True
+2026-08-03T13:23:27,first_tune,24,random_forest,pm10_lag6h,0.0128613093828169,False
+2026-08-03T13:23:27,first_tune,24,random_forest,pm10_lag3h,0.0127393471855176,False
+2026-08-03T13:23:27,first_tune,24,random_forest,pm10_roll3h_mean,0.0127234552465007,False
+2026-08-03T13:23:27,first_tune,24,random_forest,o3_lag24h,0.0123676178229214,False
+2026-08-03T13:23:27,first_tune,24,random_forest,pm10_lag24h,0.0120105054175095,False
+2026-08-03T13:23:27,first_tune,24,random_forest,o3_roll6h_mean,0.0111765249425418,False
+2026-08-03T13:23:27,first_tune,24,random_forest,o3_roll3h_mean,0.0108276681906233,False
+2026-08-03T13:23:27,first_tune,24,random_forest,Gust speed,0.0106869297000383,True
+2026-08-03T13:23:27,first_tune,24,random_forest,o3,0.0105893184393844,False
+2026-08-03T13:23:27,first_tune,24,random_forest,Wind speed,0.009938315959017,True
+2026-08-03T13:23:27,first_tune,24,random_forest,o3_lag1h,0.0099183921010096,False
+2026-08-03T13:23:27,first_tune,24,random_forest,cloud_cover_previous_day1,0.0096881659907681,True
+2026-08-03T13:23:27,first_tune,24,random_forest,o3_lag2h,0.0096201694107172,False
+2026-08-03T13:23:27,first_tune,24,random_forest,o3_lag3h,0.0095146901814486,False
+2026-08-03T13:23:27,first_tune,24,random_forest,dow_cos,0.0094196329130156,False
+2026-08-03T13:23:27,first_tune,24,random_forest,no2_roll3h_mean,0.0094061196723706,False
+2026-08-03T13:23:27,first_tune,24,random_forest,no2_lag24h,0.0094018830119754,False
+2026-08-03T13:23:27,first_tune,24,random_forest,no2_roll6h_mean,0.0091019621714322,False
+2026-08-03T13:23:27,first_tune,24,random_forest,o3_lag6h,0.0087364567752897,False
+2026-08-03T13:23:27,first_tune,24,random_forest,no2,0.0082769733102774,False
+2026-08-03T13:23:27,first_tune,24,random_forest,no2_lag3h,0.0077553697659343,False
+2026-08-03T13:23:27,first_tune,24,random_forest,dow_sin,0.0074319337972152,False
+2026-08-03T13:23:27,first_tune,24,random_forest,no2_lag1h,0.0072508313257933,False
+2026-08-03T13:23:27,first_tune,24,random_forest,no2_lag2h,0.0072420985897529,False
+2026-08-03T13:23:27,first_tune,24,random_forest,Cloud amount,0.0070905152559352,True
+2026-08-03T13:23:27,first_tune,24,random_forest,no2_lag6h,0.0066524877158234,False
+2026-08-03T13:23:27,first_tune,24,random_forest,Present weather (auto),0.0048579106537927,True
+2026-08-03T13:23:27,first_tune,24,random_forest,hour_sin,0.0042627443957307,False
+2026-08-03T13:23:27,first_tune,24,random_forest,hour_cos,0.0041586485317516,False
+2026-08-03T13:23:27,first_tune,24,random_forest,precipitation_previous_day1,0.0021903592999179,True
+2026-08-03T13:23:27,first_tune,24,random_forest,Precipitation intensity,0.0006361876232224,True
+2026-08-03T13:23:27,first_tune,24,random_forest,Precipitation amount,0.0005989154770395,True
+2026-08-03T13:23:27,first_tune,24,random_forest,boundary_layer_height_missing,0.0005953926091907,False
+2026-08-03T13:23:27,first_tune,24,xgboost,pm25_roll24h_mean,0.1233410313725471,False
+2026-08-03T13:23:27,first_tune,24,xgboost,pm25_roll6h_mean,0.1089121028780937,False
+2026-08-03T13:23:27,first_tune,24,xgboost,pm25,0.0619300678372383,False
+2026-08-03T13:23:27,first_tune,24,xgboost,Snow depth,0.0550079271197319,True
+2026-08-03T13:23:27,first_tune,24,xgboost,pm25_lag1h,0.0362390279769897,False
+2026-08-03T13:23:27,first_tune,24,xgboost,wind_direction_10m_previous_day1,0.0273679792881011,True
+2026-08-03T13:23:27,first_tune,24,xgboost,no2,0.0220448076725006,False
+2026-08-03T13:23:27,first_tune,24,xgboost,o3_roll24h_mean,0.0212103798985481,False
+2026-08-03T13:23:27,first_tune,24,xgboost,pm25_roll3h_mean,0.0206398628652095,False
+2026-08-03T13:23:27,first_tune,24,xgboost,o3_lag1h,0.020613981410861,False
+2026-08-03T13:23:27,first_tune,24,xgboost,temperature_2m_previous_day1,0.0189674943685531,True
+2026-08-03T13:23:27,first_tune,24,xgboost,pm10_roll24h_mean,0.0181076135486364,False
+2026-08-03T13:23:27,first_tune,24,xgboost,dow_cos,0.0172880701720714,False
+2026-08-03T13:23:27,first_tune,24,xgboost,Pressure (msl),0.016893858090043,True
+2026-08-03T13:23:27,first_tune,24,xgboost,o3,0.0161003526300191,False
+2026-08-03T13:23:27,first_tune,24,xgboost,no2_lag24h,0.0160853620618581,False
+2026-08-03T13:23:27,first_tune,24,xgboost,pm25_lag24h,0.0160101074725389,False
+2026-08-03T13:23:27,first_tune,24,xgboost,o3_roll3h_mean,0.0158011280000209,False
+2026-08-03T13:23:27,first_tune,24,xgboost,pressure_msl_previous_day1,0.0154683757573366,True
+2026-08-03T13:23:27,first_tune,24,xgboost,pm25_lag2h,0.0153840230777859,False
+2026-08-03T13:23:27,first_tune,24,xgboost,o3_lag2h,0.0148304076865315,False
+2026-08-03T13:23:27,first_tune,24,xgboost,pm10,0.0143851488828659,False
+2026-08-03T13:23:27,first_tune,24,xgboost,Dew-point temperature,0.0132551481947302,True
+2026-08-03T13:23:27,first_tune,24,xgboost,wind_speed_10m_previous_day1,0.0128417471423745,True
+2026-08-03T13:23:27,first_tune,24,xgboost,o3_roll6h_mean,0.0126211894676089,False
+2026-08-03T13:23:27,first_tune,24,xgboost,boundary_layer_height,0.0123710548505187,False
+2026-08-03T13:23:27,first_tune,24,xgboost,Wind speed,0.0119225876405835,True
+2026-08-03T13:23:27,first_tune,24,xgboost,Air temperature,0.0118921697139739,True
+2026-08-03T13:23:27,first_tune,24,xgboost,Wind direction,0.0116938762366771,True
+2026-08-03T13:23:27,first_tune,24,xgboost,no2_roll6h_mean,0.0112684145569801,False
+2026-08-03T13:23:27,first_tune,24,xgboost,o3_lag24h,0.0111709954217076,False
+2026-08-03T13:23:27,first_tune,24,xgboost,relative_humidity_2m_previous_day1,0.0110570527613163,True
+2026-08-03T13:23:27,first_tune,24,xgboost,pm10_lag1h,0.0107868164777755,False
+2026-08-03T13:23:27,first_tune,24,xgboost,Horizontal visibility,0.0107603510841727,True
+2026-08-03T13:23:27,first_tune,24,xgboost,o3_lag3h,0.0106897372752428,False
+2026-08-03T13:23:27,first_tune,24,xgboost,Gust speed,0.0105134677141904,True
+2026-08-03T13:23:27,first_tune,24,xgboost,precipitation_previous_day1,0.0098500456660985,True
+2026-08-03T13:23:27,first_tune,24,xgboost,dew_point_2m_previous_day1,0.0097846230491995,True
+2026-08-03T13:23:27,first_tune,24,xgboost,cloud_cover_previous_day1,0.0095878718420863,True
+2026-08-03T13:23:27,first_tune,24,xgboost,Relative humidity,0.0093689318746328,True
+2026-08-03T13:23:27,first_tune,24,xgboost,no2_lag2h,0.0089899310842156,False
+2026-08-03T13:23:27,first_tune,24,xgboost,no2_roll24h_mean,0.0074788946658372,False
+2026-08-03T13:23:27,first_tune,24,xgboost,pm10_lag6h,0.0071067987009882,False
+2026-08-03T13:23:27,first_tune,24,xgboost,pm10_roll6h_mean,0.0068919626064598,False
+2026-08-03T13:23:27,first_tune,24,xgboost,pm10_lag24h,0.0067543815821409,False
+2026-08-03T13:23:27,first_tune,24,xgboost,pm10_lag2h,0.0063375472091138,False
+2026-08-03T13:23:27,first_tune,24,xgboost,o3_lag6h,0.0062929913401603,False
+2026-08-03T13:23:27,first_tune,24,xgboost,Present weather (auto),0.0062648952007293,True
+2026-08-03T13:23:27,first_tune,24,xgboost,no2_lag3h,0.0061967386864125,False
+2026-08-03T13:23:27,first_tune,24,xgboost,pm10_roll3h_mean,0.0053242854773998,False
+2026-08-03T13:23:27,first_tune,24,xgboost,no2_lag1h,0.0052683986723423,False
+2026-08-03T13:23:27,first_tune,24,xgboost,pm10_lag3h,0.0050658695399761,False
+2026-08-03T13:23:27,first_tune,24,xgboost,Cloud amount,0.0050104558467864,True
+2026-08-03T13:23:27,first_tune,24,xgboost,no2_roll3h_mean,0.0045781983062624,False
+2026-08-03T13:23:27,first_tune,24,xgboost,dow_sin,0.0043287966400384,False
+2026-08-03T13:23:27,first_tune,24,xgboost,pm25_lag6h,0.0036669571418315,False
+2026-08-03T13:23:27,first_tune,24,xgboost,hour_cos,0.0033618819434195,False
+2026-08-03T13:23:27,first_tune,24,xgboost,no2_lag6h,0.0028593458700925,False
+2026-08-03T13:23:27,first_tune,24,xgboost,pm25_lag3h,0.0028453185223042,False
+2026-08-03T13:23:27,first_tune,24,xgboost,hour_sin,0.0013111578300595,False
+2026-08-03T13:23:27,first_tune,24,xgboost,Precipitation amount,0.0,True
+2026-08-03T13:23:27,first_tune,24,xgboost,Precipitation intensity,0.0,True
+2026-08-03T13:23:27,first_tune,24,xgboost,boundary_layer_height_missing,0.0,False
+2026-08-03T13:37:28,first_tune,24,random_forest,pm25_roll24h_mean,0.0640480194367401,False
+2026-08-03T13:37:28,first_tune,24,random_forest,pm25,0.0395990070901704,False
+2026-08-03T13:37:28,first_tune,24,random_forest,pm25_lag2h,0.0353678926563851,False
+2026-08-03T13:37:28,first_tune,24,random_forest,pm25_roll6h_mean,0.0352108389506787,False
+2026-08-03T13:37:28,first_tune,24,random_forest,pm25_lag1h,0.0350486068167522,False
+2026-08-03T13:37:28,first_tune,24,random_forest,wind_direction_10m_previous_day1,0.0338445976408898,True
+2026-08-03T13:37:28,first_tune,24,random_forest,pm25_roll3h_mean,0.0316820462433691,False
+2026-08-03T13:37:28,first_tune,24,random_forest,pm25_lag3h,0.0294446486854938,False
+2026-08-03T13:37:28,first_tune,24,random_forest,Pressure (msl),0.0286346497631051,True
+2026-08-03T13:37:28,first_tune,24,random_forest,pm25_lag24h,0.0278517035112372,False
+2026-08-03T13:37:28,first_tune,24,random_forest,pm10_roll24h_mean,0.0275085871340755,False
+2026-08-03T13:37:28,first_tune,24,random_forest,Snow depth,0.0268313388961064,True
+2026-08-03T13:37:28,first_tune,24,random_forest,pm25_lag6h,0.0260023545130273,False
+2026-08-03T13:37:28,first_tune,24,random_forest,Dew-point temperature,0.0232141260859528,True
+2026-08-03T13:37:28,first_tune,24,random_forest,pressure_msl_previous_day1,0.022600558756981,True
+2026-08-03T13:37:28,first_tune,24,random_forest,relative_humidity_2m_previous_day1,0.0220921290674829,True
+2026-08-03T13:37:28,first_tune,24,random_forest,temperature_2m_previous_day1,0.0192339337393975,True
+2026-08-03T13:37:28,first_tune,24,random_forest,Air temperature,0.0179704167303888,True
+2026-08-03T13:37:28,first_tune,24,random_forest,dew_point_2m_previous_day1,0.0178051183898107,True
+2026-08-03T13:37:28,first_tune,24,random_forest,wind_speed_10m_previous_day1,0.0177820967028594,True
+2026-08-03T13:37:28,first_tune,24,random_forest,pm10,0.0176857870692416,False
+2026-08-03T13:37:28,first_tune,24,random_forest,Wind direction,0.0176642412991541,True
+2026-08-03T13:37:28,first_tune,24,random_forest,o3_roll24h_mean,0.0158211092800592,False
+2026-08-03T13:37:28,first_tune,24,random_forest,no2_roll24h_mean,0.0151308785259067,False
+2026-08-03T13:37:28,first_tune,24,random_forest,pm10_lag2h,0.0148467541563085,False
+2026-08-03T13:37:28,first_tune,24,random_forest,pm10_roll6h_mean,0.014092744554769,False
+2026-08-03T13:37:28,first_tune,24,random_forest,boundary_layer_height,0.0139858964811769,False
+2026-08-03T13:37:28,first_tune,24,random_forest,pm10_lag1h,0.0134283724534276,False
+2026-08-03T13:37:28,first_tune,24,random_forest,Relative humidity,0.0129408999481923,True
+2026-08-03T13:37:28,first_tune,24,random_forest,Horizontal visibility,0.0129018125545815,True
+2026-08-03T13:37:28,first_tune,24,random_forest,pm10_lag6h,0.0128613093828169,False
+2026-08-03T13:37:28,first_tune,24,random_forest,pm10_lag3h,0.0127393471855176,False
+2026-08-03T13:37:28,first_tune,24,random_forest,pm10_roll3h_mean,0.0127234552465007,False
+2026-08-03T13:37:28,first_tune,24,random_forest,o3_lag24h,0.0123676178229214,False
+2026-08-03T13:37:28,first_tune,24,random_forest,pm10_lag24h,0.0120105054175095,False
+2026-08-03T13:37:28,first_tune,24,random_forest,o3_roll6h_mean,0.0111765249425418,False
+2026-08-03T13:37:28,first_tune,24,random_forest,o3_roll3h_mean,0.0108276681906233,False
+2026-08-03T13:37:28,first_tune,24,random_forest,Gust speed,0.0106869297000383,True
+2026-08-03T13:37:28,first_tune,24,random_forest,o3,0.0105893184393844,False
+2026-08-03T13:37:28,first_tune,24,random_forest,Wind speed,0.009938315959017,True
+2026-08-03T13:37:28,first_tune,24,random_forest,o3_lag1h,0.0099183921010096,False
+2026-08-03T13:37:28,first_tune,24,random_forest,cloud_cover_previous_day1,0.0096881659907681,True
+2026-08-03T13:37:28,first_tune,24,random_forest,o3_lag2h,0.0096201694107172,False
+2026-08-03T13:37:28,first_tune,24,random_forest,o3_lag3h,0.0095146901814486,False
+2026-08-03T13:37:28,first_tune,24,random_forest,dow_cos,0.0094196329130156,False
+2026-08-03T13:37:28,first_tune,24,random_forest,no2_roll3h_mean,0.0094061196723706,False
+2026-08-03T13:37:28,first_tune,24,random_forest,no2_lag24h,0.0094018830119754,False
+2026-08-03T13:37:28,first_tune,24,random_forest,no2_roll6h_mean,0.0091019621714322,False
+2026-08-03T13:37:28,first_tune,24,random_forest,o3_lag6h,0.0087364567752897,False
+2026-08-03T13:37:28,first_tune,24,random_forest,no2,0.0082769733102774,False
+2026-08-03T13:37:28,first_tune,24,random_forest,no2_lag3h,0.0077553697659343,False
+2026-08-03T13:37:28,first_tune,24,random_forest,dow_sin,0.0074319337972152,False
+2026-08-03T13:37:28,first_tune,24,random_forest,no2_lag1h,0.0072508313257933,False
+2026-08-03T13:37:28,first_tune,24,random_forest,no2_lag2h,0.0072420985897529,False
+2026-08-03T13:37:28,first_tune,24,random_forest,Cloud amount,0.0070905152559352,True
+2026-08-03T13:37:28,first_tune,24,random_forest,no2_lag6h,0.0066524877158234,False
+2026-08-03T13:37:28,first_tune,24,random_forest,Present weather (auto),0.0048579106537927,True
+2026-08-03T13:37:28,first_tune,24,random_forest,hour_sin,0.0042627443957307,False
+2026-08-03T13:37:28,first_tune,24,random_forest,hour_cos,0.0041586485317516,False
+2026-08-03T13:37:28,first_tune,24,random_forest,precipitation_previous_day1,0.0021903592999179,True
+2026-08-03T13:37:28,first_tune,24,random_forest,Precipitation intensity,0.0006361876232224,True
+2026-08-03T13:37:28,first_tune,24,random_forest,Precipitation amount,0.0005989154770395,True
+2026-08-03T13:37:28,first_tune,24,random_forest,boundary_layer_height_missing,0.0005953926091907,False
+2026-08-03T13:37:28,first_tune,24,xgboost,pm25_roll24h_mean,0.12334103137254715,False
+2026-08-03T13:37:28,first_tune,24,xgboost,pm25_roll6h_mean,0.10891210287809372,False
+2026-08-03T13:37:28,first_tune,24,xgboost,pm25,0.06193006783723831,False
+2026-08-03T13:37:28,first_tune,24,xgboost,Snow depth,0.0550079271197319,True
+2026-08-03T13:37:28,first_tune,24,xgboost,pm25_lag1h,0.036239027976989746,False
+2026-08-03T13:37:28,first_tune,24,xgboost,wind_direction_10m_previous_day1,0.027367979288101196,True
+2026-08-03T13:37:28,first_tune,24,xgboost,no2,0.02204480767250061,False
+2026-08-03T13:37:28,first_tune,24,xgboost,o3_roll24h_mean,0.021210379898548126,False
+2026-08-03T13:37:28,first_tune,24,xgboost,pm25_roll3h_mean,0.02063986286520958,False
+2026-08-03T13:37:28,first_tune,24,xgboost,o3_lag1h,0.020613981410861015,False
+2026-08-03T13:37:28,first_tune,24,xgboost,temperature_2m_previous_day1,0.01896749436855316,True
+2026-08-03T13:37:28,first_tune,24,xgboost,pm10_roll24h_mean,0.018107613548636436,False
+2026-08-03T13:37:28,first_tune,24,xgboost,dow_cos,0.017288070172071457,False
+2026-08-03T13:37:28,first_tune,24,xgboost,Pressure (msl),0.016893858090043068,True
+2026-08-03T13:37:28,first_tune,24,xgboost,o3,0.016100352630019188,False
+2026-08-03T13:37:28,first_tune,24,xgboost,no2_lag24h,0.016085362061858177,False
+2026-08-03T13:37:28,first_tune,24,xgboost,pm25_lag24h,0.016010107472538948,False
+2026-08-03T13:37:28,first_tune,24,xgboost,o3_roll3h_mean,0.01580112800002098,False
+2026-08-03T13:37:28,first_tune,24,xgboost,pressure_msl_previous_day1,0.015468375757336617,True
+2026-08-03T13:37:28,first_tune,24,xgboost,pm25_lag2h,0.015384023077785969,False
+2026-08-03T13:37:28,first_tune,24,xgboost,o3_lag2h,0.014830407686531544,False
+2026-08-03T13:37:28,first_tune,24,xgboost,pm10,0.014385148882865906,False
+2026-08-03T13:37:28,first_tune,24,xgboost,Dew-point temperature,0.013255148194730282,True
+2026-08-03T13:37:28,first_tune,24,xgboost,wind_speed_10m_previous_day1,0.012841747142374516,True
+2026-08-03T13:37:28,first_tune,24,xgboost,o3_roll6h_mean,0.012621189467608929,False
+2026-08-03T13:37:28,first_tune,24,xgboost,boundary_layer_height,0.012371054850518703,False
+2026-08-03T13:37:28,first_tune,24,xgboost,Wind speed,0.011922587640583515,True
+2026-08-03T13:37:28,first_tune,24,xgboost,Air temperature,0.011892169713973999,True
+2026-08-03T13:37:28,first_tune,24,xgboost,Wind direction,0.01169387623667717,True
+2026-08-03T13:37:28,first_tune,24,xgboost,no2_roll6h_mean,0.011268414556980133,False
+2026-08-03T13:37:28,first_tune,24,xgboost,o3_lag24h,0.01117099542170763,False
+2026-08-03T13:37:28,first_tune,24,xgboost,relative_humidity_2m_previous_day1,0.0110570527613163,True
+2026-08-03T13:37:28,first_tune,24,xgboost,pm10_lag1h,0.010786816477775574,False
+2026-08-03T13:37:28,first_tune,24,xgboost,Horizontal visibility,0.010760351084172726,True
+2026-08-03T13:37:28,first_tune,24,xgboost,o3_lag3h,0.010689737275242805,False
+2026-08-03T13:37:28,first_tune,24,xgboost,Gust speed,0.010513467714190483,True
+2026-08-03T13:37:28,first_tune,24,xgboost,precipitation_previous_day1,0.009850045666098595,True
+2026-08-03T13:37:28,first_tune,24,xgboost,dew_point_2m_previous_day1,0.009784623049199581,True
+2026-08-03T13:37:28,first_tune,24,xgboost,cloud_cover_previous_day1,0.009587871842086315,True
+2026-08-03T13:37:28,first_tune,24,xgboost,Relative humidity,0.009368931874632835,True
+2026-08-03T13:37:28,first_tune,24,xgboost,no2_lag2h,0.008989931084215641,False
+2026-08-03T13:37:28,first_tune,24,xgboost,no2_roll24h_mean,0.007478894665837288,False
+2026-08-03T13:37:28,first_tune,24,xgboost,pm10_lag6h,0.007106798700988293,False
+2026-08-03T13:37:28,first_tune,24,xgboost,pm10_roll6h_mean,0.006891962606459856,False
+2026-08-03T13:37:28,first_tune,24,xgboost,pm10_lag24h,0.0067543815821409225,False
+2026-08-03T13:37:28,first_tune,24,xgboost,pm10_lag2h,0.006337547209113836,False
+2026-08-03T13:37:28,first_tune,24,xgboost,o3_lag6h,0.00629299134016037,False
+2026-08-03T13:37:28,first_tune,24,xgboost,Present weather (auto),0.00626489520072937,True
+2026-08-03T13:37:28,first_tune,24,xgboost,no2_lag3h,0.006196738686412573,False
+2026-08-03T13:37:28,first_tune,24,xgboost,pm10_roll3h_mean,0.005324285477399826,False
+2026-08-03T13:37:28,first_tune,24,xgboost,no2_lag1h,0.0052683986723423,False
+2026-08-03T13:37:28,first_tune,24,xgboost,pm10_lag3h,0.00506586953997612,False
+2026-08-03T13:37:28,first_tune,24,xgboost,Cloud amount,0.005010455846786499,True
+2026-08-03T13:37:28,first_tune,24,xgboost,no2_roll3h_mean,0.004578198306262493,False
+2026-08-03T13:37:28,first_tune,24,xgboost,dow_sin,0.00432879664003849,False
+2026-08-03T13:37:28,first_tune,24,xgboost,pm25_lag6h,0.0036669571418315172,False
+2026-08-03T13:37:28,first_tune,24,xgboost,hour_cos,0.0033618819434195757,False
+2026-08-03T13:37:28,first_tune,24,xgboost,no2_lag6h,0.002859345870092511,False
+2026-08-03T13:37:28,first_tune,24,xgboost,pm25_lag3h,0.0028453185223042965,False
+2026-08-03T13:37:28,first_tune,24,xgboost,hour_sin,0.0013111578300595284,False
+2026-08-03T13:37:28,first_tune,24,xgboost,Precipitation amount,0.0,True
+2026-08-03T13:37:28,first_tune,24,xgboost,Precipitation intensity,0.0,True
+2026-08-03T13:37:28,first_tune,24,xgboost,boundary_layer_height_missing,0.0,False

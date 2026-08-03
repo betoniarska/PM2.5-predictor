@@ -1,7 +1,7 @@
 """
 Outer-joins the hourly OpenAQ pollutant series (aggregate_openaq.py) with the
-hourly FMI weather series (resample_fmi.py) into one wide dataframe, indexed
-by datetime_utc.
+hourly FMI weather series (resample_fmi.py) and the hourly Open-Meteo forecast
+series (load_openmeteo_forecast.py) into one wide dataframe, indexed by datetime_utc.
 """
 
 import logging
@@ -25,9 +25,21 @@ def load_openmeteo_forecast() -> pd.DataFrame:
  
     df = pd.read_parquet(path)
     df["datetime_utc"] = pd.to_datetime(df["datetime_utc"], utc=True)
+    df = df.drop_duplicates(subset="datetime_utc", keep="first") 
+
  
     keep_cols = ["datetime_utc"] + [c for c in df.columns if c.endswith("_previous_day1")]
     return df[keep_cols]
+
+def load_blh() -> pd.DataFrame:
+    path = RAW_DIR / "openmeteo_blh.parquet"
+    if not path.exists():
+        log.warning("No BLH file at %s, skipping", path)
+        return pd.DataFrame()
+    df = pd.read_parquet(path)
+    df["datetime_utc"] = pd.to_datetime(df["datetime_utc"], utc=True)
+    df = df.drop_duplicates(subset="datetime_utc", keep="first")
+    return df
 
 
 def build_joined_hourly() -> pd.DataFrame:
@@ -45,6 +57,10 @@ def build_joined_hourly() -> pd.DataFrame:
     forecast = load_openmeteo_forecast()
     if not forecast.empty:
         merged = merged.merge(forecast, on="datetime_utc", how="outer")
+
+    blh = load_blh()
+    if not blh.empty:
+        merged = merged.merge(blh, on="datetime_utc", how="outer")
  
     merged = merged.sort_values("datetime_utc").reset_index(drop=True)
     # Keep only rows where either Air temperature is present or the datetime is after the first weather observation to avoid NaN's from the early OpenAQ data before the weather pull started.

@@ -3,6 +3,8 @@ import logging
 from src.ingestion.openaq import OpenAQClient
 from src.ingestion.fmi import FMIClient
 from src.ingestion.openmeteo import OpenMeteoClient
+from src.ingestion.openmeteo_gt import OpenMeteoGroundTruthClient
+
 from src.config import CITY_LAT, CITY_LON, RADIUS_M, PARAMETERS, RAW_DIR, FMI_FMISID
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
@@ -31,4 +33,10 @@ if __name__ == "__main__":
         c.fetch_and_save(
             CITY_LAT, CITY_LON, DATE_FROM, DATE_TO,
             RAW_DIR / "openmeteo_previous_day1.parquet", lead_days=[1],
-    )
+        )
+
+    with OpenMeteoGroundTruthClient() as c:
+        c.fetch_and_save(
+            CITY_LAT, CITY_LON, DATE_FROM, DATE_TO,
+            RAW_DIR / "openmeteo_blh.parquet", variables=["boundary_layer_height"],
+        )

@@ -50,6 +50,14 @@ def align_forecast_features(df: pd.DataFrame, horizon: int) -> pd.DataFrame:
         df[col] = df[col].shift(-horizon)  # pull the forecast issued at t forward to sit at row t
     return df
 
+def handle_blh_gap(df: pd.DataFrame) -> pd.DataFrame:
+    if "boundary_layer_height" not in df.columns:
+        return df
+    df["boundary_layer_height_missing"] = df["boundary_layer_height"].isna().astype(int)
+    median_val = df["boundary_layer_height"].median()
+    df["boundary_layer_height"] = df["boundary_layer_height"].fillna(median_val)
+    return df
+
 
 def add_lag_and_rolling_features(df: pd.DataFrame) -> pd.DataFrame:
     for col in POLLUTANT_COLS:
@@ -86,6 +94,7 @@ def build_features(horizon: int = HORIZON_HOURS) -> pd.DataFrame:
     df = drop_metadata_cols(df)
     df = add_target(df, horizon)
     df = align_forecast_features(df, horizon)
+    df = handle_blh_gap(df)
     df = add_lag_and_rolling_features(df)
     df = add_time_features(df)
 
