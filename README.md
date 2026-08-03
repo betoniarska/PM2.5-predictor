@@ -3,7 +3,7 @@
 A hobby ML project forecasting PM2.5 concentration in Helsinki using historical
 air quality data (OpenAQ), weather observations (FMI) and historical forecast data (Open-Meteo).
 
-**Status**: 2.8.2026: early/iterating: pipeline works end-to-end, diagnosed plateauing results, forecast features implementation begun
+**Status**: 3.8.2026: early/iterating: added boundary layer height as a feature from open-meteo's historical data as it has been shown to have great value for pm2.5 prediction
 
 ## Pipeline
 
@@ -17,6 +17,7 @@ src/
     openaq.py             OpenAQ API client (PM2.5, PM10, NO2, O3)
     fmi.py                FMI open data client (weather observations)
     openmeteo.py          OpenMeteo data client (historical forecast data)
+    openmeteo_gt.py       Ground-truth data from OpenMeteo (currently BLH)
   load_raw.py             orchestrates the raw pull for both sources
   resample_fmi.py         10-min weather observations -> hourly
   aggregate_openaq.py     multiple sensors per pollutant -> one hourly value for Helsinki area
@@ -81,21 +82,18 @@ isolation much easier than building one large script.
   indeed do represent promising value for predicting pm2.5.
 - Non-stationarity likely cause for the 2 years of data achieving worse results
 
-## Current best prediction accuracy (diagnosis.py)
+## Current best prediction accuracy (diagnosis.py) after adding BLH
 
-  XGBoost via horizon=24h and 1 year of data: R2=0.306
-  
-  This could be classified as moderate predictive power for the pm2.5 levels in the Helsinki area,
-  with the XGBoost explaining around 30% of the variation in the pm2.5 levels.
+  After adding BLH, 2 years of data now quite consistently beats out 1 year of data. BLH was not a ground-breaking feature however, at most making it   into the top 25 of features in importance. Quite likely that real value of BLH would come from being able to implement it similar to open-meteos      historical forecast data (unlike now, where the format resembles FMI's ground truth data)
 
   The full latest run of diagnose:
   
   === Full 2yr training window ===
-  ridge           MAE=2.349 RMSE=3.258 R2=0.170
-  random_forest   MAE=2.248 RMSE=3.129 R2=0.234
-  xgboost         MAE=2.171 RMSE=3.096 R2=0.250
+  ridge           MAE=2.406 RMSE=3.285 R2=0.155
+  random_forest   MAE=2.229 RMSE=3.105 R2=0.245
+  xgboost         MAE=2.153 RMSE=3.077 R2=0.259
   
   === Recent 1yr training window (same test set) ===
-  ridge           MAE=2.461 RMSE=3.385 R2=0.103
-  random_forest   MAE=2.389 RMSE=3.220 R2=0.189
-  xgboost         MAE=2.125 RMSE=2.978 R2=0.306
+  ridge           MAE=2.532 RMSE=3.401 R2=0.094
+  random_forest   MAE=2.370 RMSE=3.212 R2=0.192
+  xgboost         MAE=2.245 RMSE=3.115 R2=0.240
